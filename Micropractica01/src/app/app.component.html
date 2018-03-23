@@ -1,0 +1,88 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="300" alt="Angular Logo" src="D:\Angular\DSI\src\assets\logo_eco.png">
+</div>
+
+<h2>Consumición: </h2>
+
+
+  <div id="formulario">
+<h1>
+  
+  <!--  
+<select name="ngvalueselect" ng-model="data.model" multiple>
+    <option *ngFor="let lang of platos" ng-value="option.value">{{lang}}</option>
+  </select>
+  -->
+  
+  <select id="nombre" class="form-control" >
+    <option value="">Por favor seleccione un plato</option>
+    <option *ngFor="let lang of platos" 
+            
+            ng-value="option.value"> 
+            {{lang}} 
+            
+    </option>
+    
+  </select>
+    <button id= "button1" type="submit"  class="form-control" value= "plato" (click)='addLinea()' >AGREGAR</button>
+   
+  </h1>
+  
+ <!-- <script>
+   function blabla(){
+var x = document.getElementById("nombre").length;
+document.writelns("<p>"+x+"</p>");
+
+}
+  </script>
+-->
+
+
+</div>
+
+<table class="listapedido">
+  <thead>
+    <tr>
+      <th>PRODUCTO</th>
+      <th>PRECIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>plato 1</td>
+      <td>precio 1</td>
+    </tr>
+    <tr>
+        <td>plato 2</td>
+        <td> precio 2</td>
+        <td><button type='button' (click)='delLinea(i)'>DEL</button></td>
+    </tr>
+  </tbody>
+</table>
+  <!--<button type='button' (click)='addLinea()'>ADD LINEA</button> -->
+
+<p class="listaborrar" *ngFor='let linea of plato; let i=index'>
+    <button type='button' (click)='delLinea(i)'>DEL</button>
+	{{linea}}
+</p>
+
+<!--
+<form class='classform1' #f='ngForm'></form>
+
+<label>Color1:</label>
+<select name='lstColor' [(ngModel)]='cod_color'>
+    <option *ngFor='let color of colores'>{{color[0]}}</option>
+  </select>
+
+</form>
+
+Color1: {{cod_color}}<br/>
+Codigo color2: {{cod_color2}}
+
+-->
+
+<router-outlet></router-outlet>
