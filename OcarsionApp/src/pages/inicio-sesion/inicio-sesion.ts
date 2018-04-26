@@ -26,6 +26,11 @@ export class InicioSesionPage {
     {
     this.navCtrl.push('PrincipalUsuarioPage');
     }
+    
+    irRegistrarse()
+    {
+      this.navCtrl.push('RegistrarsePage');
+    }
    }
    
  
