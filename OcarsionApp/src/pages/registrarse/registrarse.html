@@ -31,9 +31,9 @@
           <ion-label id = "pass" color="dark" stacked>Repetir contraseña</ion-label>
           <ion-input id = "pass" type="password" placeholder="introduce tu contraseña"></ion-input>
         </ion-item>
-      
+     
         <ion-item>
-          <ion-label>CIP:</ion-label>
+          <ion-label id="empleado">CIP de empleado*:</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
 
@@ -43,8 +43,12 @@
         </ion-item>
       </ion-list>
 
+
       <div id = "botonRegistrar" >
           <button id = "letraBoton" color = "danger" ion-button large (click)="irPagSiguiente()">Registrar</button>
       </div>  
+
+
+      <p id="aclaracion">(*) Este campo solo es para empresas</p>
 
 </ion-content>
