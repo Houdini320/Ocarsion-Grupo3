@@ -21,5 +21,8 @@ export class RegistrarsePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrarsePage');
   }
+  irPagSiguiente(){
+    this.navCtrl.push('PrincipalUsuarioPage');
+    }
 
 }
