@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
