@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 
 /**
  * Generated class for the InicioSesionPage page.
@@ -18,10 +17,6 @@ import { HomePage } from '../home/home';
 export class InicioSesionPage {
     constructor(public navCtrl: NavController, public navParams: NavParams) {}
   
-    irHome()
-    {
-    this.navCtrl.setRoot(HomePage);
-    }
    irPagSiguiente()
     {
     this.navCtrl.push('PrincipalUsuarioPage');

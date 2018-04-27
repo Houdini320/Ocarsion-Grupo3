@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
 /**
  * Generated class for the PrincipalUsuarioPage page.
  *
@@ -19,7 +19,7 @@ export class PrincipalUsuarioPage {
   
     irHome()
     {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(InicioSesionPage);
     }
    irPagSiguiente()
     {

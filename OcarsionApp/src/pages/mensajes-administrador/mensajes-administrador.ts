@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
 /**
  * Generated class for the MensajesAdministradorPage page.
  *
@@ -18,7 +18,7 @@ export class MensajesAdministradorPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
  irHome()
   {
-  this.navCtrl.setRoot(HomePage);
+  this.navCtrl.setRoot(InicioSesionPage);
   }
  irPagSiguiente()
   {
