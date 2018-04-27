@@ -14,18 +14,28 @@
 
 
 <ion-content padding>
-
+  <form [formGroup]="myForm" novalidate> 
     <ion-list>
 
       <ion-item>
         <ion-label id = "user" color="dark" stacked>Usuario</ion-label>
-          <ion-input id = "user" type="email" placeholder="introduce tu email"></ion-input>
+          <ion-input id = "user" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>
         </ion-item>
+
+        <div id = "errorEmail" *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Campo obligatorio</p>
+          <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Formato de email incorrecto</p>
+        </div>
       
         <ion-item>
           <ion-label id = "pass" color="dark" stacked>Contraseña</ion-label>
-          <ion-input id = "pass" type="password" placeholder="introduce tu contraseña"></ion-input>
+          <ion-input id = "pass" formControlName="pass" type="password" placeholder="introduce tu contraseña"></ion-input>
         </ion-item>
+
+        <div id = "errorPass" *ngIf="myForm.get('pass').errors && myForm.get('pass').dirty">
+          <p color="danger" ion-text *ngIf="myForm.get('pass').hasError('required')">Campo obligatorio</p>
+          <p color="danger" ion-text *ngIf="myForm.get('pass').hasError('pattern')">Contraseña débil</p>
+        </div>
     
         <ion-item>
           <ion-label id = "pass" color="dark" stacked>Repetir contraseña</ion-label>
@@ -34,7 +44,7 @@
      
         <ion-item>
           <ion-label id="empleado">CIP de empleado*:</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" ></ion-input>
         </ion-item>
 
         <ion-item>
@@ -43,6 +53,7 @@
         </ion-item>
       </ion-list>
 
+  </form>    
 
       <div id = "botonRegistrar" >
           <button id = "letraBoton" color = "danger" ion-button large (click)="irPagSiguiente()">Registrar</button>

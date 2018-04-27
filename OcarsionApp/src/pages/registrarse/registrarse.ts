@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 /**
  * Generated class for the RegistrarsePage page.
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrarsePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  myForm: FormGroup;
+
+  constructor(public navCtrl: NavController,  public fb: FormBuilder) {
+    
+    this.myForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      pass: ['', [Validators.required, Validators.pattern(/^[a-z0-9]{6,18}$/)]],
+    }); 
   }
 
   ionViewDidLoad() {
