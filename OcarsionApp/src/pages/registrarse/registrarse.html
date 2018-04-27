@@ -56,7 +56,7 @@
   </form>    
 
       <div id = "botonRegistrar" >
-          <button id = "letraBoton" color = "danger" ion-button large (click)="irPagSiguiente()">Registrar</button>
+          <button id = "letraBoton" color = "danger" [disabled]="myForm.invalid" ion-button large (click)="irPagSiguiente()">Registrar</button>
       </div>  
 
 
