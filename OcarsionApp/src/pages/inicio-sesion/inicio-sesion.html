@@ -20,7 +20,7 @@
   <ion-list>
     <ion-item>
     <ion-label id = "user" color="dark" stacked>Usuario</ion-label>
-      <ion-input id = "user" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>
+      <ion-input id = "userEmail" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>
     </ion-item>
 
     <div id = "errorEmail" *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
@@ -42,7 +42,7 @@
 </form>
 
 <div id = "botonEntrar" >
-  <button id = "letraBoton" color = "danger" ion-button large (click)="irPagSiguiente()" [disabled]="myForm.invalid">Entrar</button>
+  <button id = "letraBoton" color = "danger" ion-button large (click)="doConfirm()" [disabled]="myForm.invalid">Entrar</button>
 </div>  
 <div id = "registro">
   <p>¿Todavia no te has registrado?</p>

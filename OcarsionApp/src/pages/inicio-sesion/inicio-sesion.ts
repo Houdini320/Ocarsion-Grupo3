@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { MyApp } from '../../app/app.component';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the InicioSesionPage page.
@@ -19,7 +21,7 @@ export class InicioSesionPage {
 
   myForm: FormGroup;
 
-    constructor(public navCtrl: NavController,  public fb: FormBuilder) {
+    constructor(public navCtrl: NavController,  public fb: FormBuilder, public alerCtrl: AlertController) {
     
       this.myForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
@@ -27,18 +29,42 @@ export class InicioSesionPage {
       }); 
     }
   
+<<<<<<< HEAD
    irPagSiguiente()
     {
     this.navCtrl.push('PrincipalAdministradorPage');
+=======
+    public irPagSiguiente(){
+ 
+      this.navCtrl.push('PrincipalUsuarioPage');
+>>>>>>> 17da554da40fc1c6cb840f3c20acbc7cac372214
     }
-    
-    irRegistrarse()
-    {
+    public irRegistrarse(){
       this.navCtrl.push('RegistrarsePage');
     }
-    
 
-   }
+    public doConfirm() {
+      let confirm = this.alerCtrl.create({
+        title: 'Confirmación para inicio de sesión',
+        message: '¿Es usted administrador?',
+        buttons: [
+          {
+            text: 'Sí',
+            handler: () => {
+              this.navCtrl.push('PrincipalAdministradorPage');
+            }
+          },
+          {
+            text: 'No',
+            handler: () => {
+              this.navCtrl.push('PrincipalUsuarioPage');
+            }
+          }
+        ]
+      });
+      confirm.present()
+    }
+}
    
  
 
