@@ -20,7 +20,7 @@
   <ion-list>
     <ion-item>
     <ion-label id = "user" color="dark" stacked>Usuario</ion-label>
-      <ion-input id = "user" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>
+      <ion-input id = "userEmail" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>
     </ion-item>
 
     <div id = "errorEmail" *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
