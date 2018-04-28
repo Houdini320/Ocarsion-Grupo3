@@ -30,13 +30,13 @@
             <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
           </ion-avatar>
           <h2>{{coches[id].marca | uppercase}}</h2>
-          <p>{{coches[id].modelo | lowercase}}</p>
+          <p>{{coches[id].modelo}}</p>
         </ion-item>
       
         <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
       
         <ion-card-content>
-          <p align="right">{{coches[id].getPVP() | number:'1.0-0'}}€</p>
+          <h1 align="right">{{coches[id].getPVP() | number:'1.0-0'}}€</h1>
           <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:'yyyy'}}</p>
           <button type='button' (click)='cmd_rebajar(id)'>Rebajar</button>
           <button type='button' (click)='cmd_vender(id)'>Vendido</button>
