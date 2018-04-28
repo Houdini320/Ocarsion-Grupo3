@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Calendar } from '@ionic-native/calendar';
+
 /**
  * Generated class for the UsuarioCitaTallerPage page.
  *
@@ -16,7 +17,30 @@ import { Calendar } from '@ionic-native/calendar';
 })
 export class UsuarioCitaTallerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar) {}
+  calendars = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar, private plt: Platform) {
+    this.plt.ready().then(() => {
+        this.calendar.listCalendars().then(data => {
+          this.calendars = data;
+        });
+    });
+  }
+
+
+  addEvent(cal){
+    let date = new Date();
+    let options = {calendarId: cal.id, calendarName: cal.name, url: 'https://ionicacademy.com', firstReminderMinutes: 15};
+
+    this.calendar.createEventInteractivelyWithOptions('My new Event', 'Munster', 'Some especial notes', date, date, options).then(() => {
+
+  });
+
+}
+
+  openCal(cal){
+    this.navCtrl.push('CalDetailsPage', {name: cal.name});
+  }
  irHome()
   {
   this.navCtrl.setRoot(HomePage);
@@ -25,13 +49,16 @@ export class UsuarioCitaTallerPage {
   {
   this.navCtrl.push('InicioSesionPage');
   }
-calendarioTaller(){
-  this.calendar.createCalendar('MyCalendar').then(
-    (msg) => { console.log(msg); },
-    (err) => { console.log(err); }
-  );
 
-}
+  
+
+  calendarioTaller(){
+    this.calendar.createCalendar('MyCalendar').then(
+      (msg) => { console.log(msg); },
+      (err) => { console.log(err); }
+    );
+  
+  }
 
  
 }
