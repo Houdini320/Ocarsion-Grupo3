@@ -4,67 +4,82 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>principalUsuario</ion-title>
-    <ion-list>
-        <ion-item>
-    <ion-label>Opciones</ion-label>
-    <ion-select [(ngModel)]="opciones">
-      <ion-option value="Comprar">COMPRAR</ion-option>
-      <ion-option value="Vender">VENDER</ion-option>
-      <ion-option value="Taller">TALLER</ion-option>
-      <ion-option value="Cambiar">CAMBIAR CONCESIONARIO</ion-option>
-      <ion-option value="CerrarSesion">CERRAR SESION</ion-option>
-      
-    </ion-select>
-       </ion-item>
-     </ion-list>
-  </ion-navbar>
+   <!-- <ion-navbar>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+      <ion-title>
+        Ocarsion
+      </ion-title>
+  
+      <ion-buttons end>
+        <button ion-button large (click)="doConfirm()">
+          <ion-icon name="options"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>-->
 
+    <ion-toolbar>    
+      <ion-title>Ocarsion</ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+    
+   
+    <ion-toolbar>
+         
+      <div id="subheader">
+        <p id="nombreConcesionario">PemaCar</p>
+      </div>   
+        
+    </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding>  
 
    
 <h2 id="titulo">Vehículos Destacados</h2>
-
-<ion-card>
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/audia1.png">
-      </ion-avatar>
-      <h2>Audi A1</h2>
-      <p>Modelo 2016</p>
-    </ion-item>
+<form class='classform1' #f='ngForm' >
   
-    <img src="../../assets/imgs/audia1.png">
+    <br/>
+    <br/>
+    <div class='txtInline'><ion-icon id="lupa" name="search"></ion-icon>Filtrar por:    
+    </div>
+    <input type='search' placeholder="(marca de coche)" name='filtro2' [(ngModel)]='filtro'/>
+    <br/><br/>
+    
+      <ion-item *ngFor='let id of getFiltrados(); let i=index'>
   
-    <ion-card-content>
-      <p>Audi A1 - 3 puertas - 3000 Km - Color Plata - 2 Mano - Modelo 2016</p>
-    </ion-card-content>
+        <ion-card>
   
-  </ion-card>
-
-  <ion-card>
-
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/atecarojo.png">
-        </ion-avatar>
-        <h2>Seat ateca</h2>
-        <p>Modelo 2018</p>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/imgs/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+            </ion-avatar>
+            <h2>{{coches[id].marca | uppercase}}</h2>
+            <p>{{coches[id].modelo}}</p>
+          </ion-item>
+        
+          <img src="assets/imgs/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+        
+          <ion-card-content>
+            <h1 align="right">{{coches[id].getPVP() | number:'1.0-0'}}€</h1>
+            <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:'yyyy'}}</p>
+            <div id="contenedorCompra">
+              <button  ion-button id="botonCompra" type='button' (click)='pedirCita()'>Comprar</button>
+            </div>           
+          </ion-card-content>
+        
+        </ion-card>
+  
       </ion-item>
-    
-      <img src="../../assets/imgs/atecarojo.png">
-    
-      <ion-card-content>
-        <p>Seat ateca - 5 puertas - 1000 Km - Color Rojo - 2 Mano - Modelo 2018</p>
-      </ion-card-content>
-    
-    </ion-card>
+    </form>
+  
   
 </ion-content>

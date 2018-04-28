@@ -6,19 +6,33 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>principalAdministrador</ion-title>
-  </ion-navbar>
+    <ion-toolbar>    
+        <ion-title>Ocarsion</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      </ion-toolbar>
+
+  <ion-toolbar>
+         
+      <div id="subheader">
+        <p id="nombreConcesionario">PemaCar</p>
+      </div>   
+        
+  </ion-toolbar>
 
 </ion-header>
 
 <ion-content padding>
 
+    <h2 id="titulo">Vehículos a la Venta</h2>
   <form class='classform1' #f='ngForm' >
   
   <br/>
-  <br/>
-  <div class='txtInline'>Filtrar por:</div><input type='search' placeholder="(marca de coche)" name='filtro2' [(ngModel)]='filtro'/>
+  <br/>   
+  <div class='txtInline'><ion-icon id="lupa" name="search"></ion-icon>Filtrar por:    
+  </div>
+  <input type='search' placeholder="(marca de coche)" name='filtro2' [(ngModel)]='filtro'/>
   <br/><br/>
   
     <ion-item *ngFor='let id of getFiltrados(); let i=index'>
@@ -27,26 +41,25 @@
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+            <img src="assets/imgs/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
           </ion-avatar>
           <h2>{{coches[id].marca | uppercase}}</h2>
           <p>{{coches[id].modelo}}</p>
         </ion-item>
       
-        <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+        <img src="assets/imgs/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
       
         <ion-card-content>
           <h1 align="right">{{coches[id].getPVP() | number:'1.0-0'}}€</h1>
           <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:'yyyy'}}</p>
-          <button type='button' (click)='cmd_rebajar(id)'>Rebajar</button>
-          <button type='button' (click)='cmd_vender(id)'>Vendido</button>
+          <div id="contenedorVenta">
+              <button ion-button id="botonVenta" type='button' (click)='cmd_vender(id)'>Vendido</button>
+          </div>          
         </ion-card-content>
       
       </ion-card>
 
     </ion-item>
   </form>
-
-  <button color = "danger" ion-button large (click)="irPagSiguiente()">Entrar</button>
 
 </ion-content>

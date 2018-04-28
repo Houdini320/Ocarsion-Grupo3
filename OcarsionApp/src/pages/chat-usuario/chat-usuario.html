@@ -6,19 +6,17 @@
 -->
 <ion-header>
 
-    <ion-toolbar>
-        <ion-buttons start>
-          <button ion-button icon-only color="royal">
-            <ion-icon name="search"></ion-icon>
-          </button>
-        </ion-buttons>
-        <ion-title>Usuario Compra</ion-title>
-        <ion-buttons end>
-          <button ion-button icon-only color="royal">
-            <ion-icon name="person-add"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-toolbar>
+    <ion-navbar>
+        <h2 id="titulo">Notificaciones</h2>
+    </ion-navbar>
+
+      <ion-navbar>
+         
+          <div id="subheader">
+            <p id="nombreConcesionario">PemaCar</p>
+          </div>   
+            
+        </ion-navbar>
 
 </ion-header>
 
@@ -26,14 +24,15 @@
 <ion-content padding>
 
     <ion-card>
-        <ion-card-header>
-          TITULO
+        <ion-card-header> 
+          <ion-icon name="chatbubbles"></ion-icon>          
+          PemaCar
         </ion-card-header>
         <ion-card-content>
-          Mensaje enviado al usuario con alguna descripcion.
+          Concepto: Recoger coche.
+          Hola buenas, su coche está listo para recoger.
         </ion-card-content>
       </ion-card>
-
 
 
       <button ion-button color="dark" (click) = "irHome()" >HOME</button>

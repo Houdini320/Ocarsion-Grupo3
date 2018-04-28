@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
-import { Calendar } from '@ionic-native/calendar';
 /**
  * Generated class for the UsuarioCitaTallerPage page.
  *
@@ -16,7 +15,7 @@ import { Calendar } from '@ionic-native/calendar';
 })
 export class UsuarioCitaTallerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
  irHome()
   {
   this.navCtrl.setRoot(InicioSesionPage);
@@ -25,13 +24,7 @@ export class UsuarioCitaTallerPage {
   {
   this.navCtrl.push('InicioSesionPage');
   }
-calendarioTaller(){
-  this.calendar.createCalendar('MyCalendar').then(
-    (msg) => { console.log(msg); },
-    (err) => { console.log(err); }
-  );
 
-}
 
  
 }

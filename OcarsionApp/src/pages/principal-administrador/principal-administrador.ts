@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 import { Coche,EstadoCoche } from './coche';
 
@@ -18,15 +18,15 @@ import { Coche,EstadoCoche } from './coche';
 
 export class PrincipalAdministradorPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
   }
 
   public EstadoCoche:any = EstadoCoche;
   
-  public coches:Array<Coche>=[	new Coche('renault','Scenic',new Date(2003,4,12), 5000,'coche01.jpg'),
-							new Coche('seat','Ibiza',new Date(2003,4,12),1200,'coche02.jpg'),
-							new Coche('renault','Megane',new Date(2006,12,23),3500,'coche03.jpg'),
-							new Coche('tesla','Model 3',new Date(2006,12,23),4000,'coche06.jpg')];
+  public coches:Array<Coche>=[	new Coche('audi','A1',new Date(2012,4,12),10000,'coche01.jpg'),
+							new Coche('seat','Ateca',new Date(2017,6,21),15000,'coche02.jpg'),
+							new Coche('audi','TT',new Date(2015,12,20),20000,'coche03.jpg'),
+							new Coche('bmw','Serie 4',new Date(2014,11,5),30000,'coche04.jpg')];
   
   public filtro:string='';
    
@@ -45,11 +45,6 @@ export class PrincipalAdministradorPage {
   {
 	  this.coches.splice(id,1);
   }
-  
-  public cmd_rebajar(id)
-  {
-	  this.coches[id].rebajar(); 
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PrincipalAdministradorPage');
@@ -58,6 +53,12 @@ export class PrincipalAdministradorPage {
   irPagSiguiente()
   {
   this.navCtrl.push('MensajesAdministradorPage');
+  }
+
+  ionViewDidEnter(){
+
+    this.menuCtrl.enable(false, 'menu1');
+    this.menuCtrl.enable(true, 'menu2');
   }
 
 }

@@ -6,11 +6,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { InicioSesionPage } from '../pages/inicio-sesion/inicio-sesion';
+import { UsuarioCompraPage } from '../pages/usuario-compra/usuario-compra';
+import { ChatUsuarioPage } from '../pages/chat-usuario/chat-usuario';
+import { ElegirConcesionarioPage } from '../pages/elegir-concesionario/elegir-concesionario';
+import { MensajesAdministradorPage } from '../pages/mensajes-administrador/mensajes-administrador';
 
 @NgModule({
   declarations: [
     MyApp,
-    InicioSesionPage
+    UsuarioCompraPage,
+    ChatUsuarioPage,
+    ElegirConcesionarioPage,
+    InicioSesionPage,
+    MensajesAdministradorPage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +27,11 @@ import { InicioSesionPage } from '../pages/inicio-sesion/inicio-sesion';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    InicioSesionPage
+    UsuarioCompraPage,
+    ChatUsuarioPage,
+    ElegirConcesionarioPage,
+    InicioSesionPage,
+    MensajesAdministradorPage
   ],
   providers: [
     StatusBar,

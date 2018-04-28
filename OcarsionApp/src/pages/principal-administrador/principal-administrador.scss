@@ -1,8 +1,42 @@
 page-principal-administrador {
 
     .classform1 .txtInline{text-align:right;width:100px;display:inline-block}
-    .classform1 input{margin-left:20px;width:130px}
+    .classform1 input{margin-left:10px;width:130px}
 
+    
+    #titulo{
+
+        text-align: center;
+    }
+    
+    #subheader{
+
+        background-color: red;
+        text-align: center;
+        margin-top: 0px;        
+    }
+
+    #nombreConcesionario{
+
+        font-size: 20px;
+        color: white;
+    }
+
+    #botonVenta{
+
+        background-color: red;        
+    }
+
+    #contenedorVenta{
+
+        text-align: center;
+    }
+
+    #lupa{
+
+        padding-right: 8px;
+        color: red;
+    }
     
 
 }
