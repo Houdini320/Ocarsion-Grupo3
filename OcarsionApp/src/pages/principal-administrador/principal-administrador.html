@@ -12,7 +12,41 @@
 
 </ion-header>
 
-
 <ion-content padding>
+
+  <form class='classform1' #f='ngForm' >
+  
+  <br/>
+  <br/>
+  <div class='txtInline'>Filtrar por:</div><input type='search' placeholder="(marca de coche)" name='filtro2' [(ngModel)]='filtro'/>
+  <br/><br/>
+  
+    <ion-item *ngFor='let id of getFiltrados(); let i=index'>
+
+      <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+          </ion-avatar>
+          <h2>{{coches[id].marca | uppercase}}</h2>
+          <p>{{coches[id].modelo | lowercase}}</p>
+        </ion-item>
+      
+        <img src="assets/{{coches[id].foto}}" *ngIf='[coches[id].foto]!=""'>
+      
+        <ion-card-content>
+          <p align="right">{{coches[id].getPVP() | number:'1.0-0'}}€</p>
+          <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:'yyyy'}}</p>
+          <button type='button' (click)='cmd_rebajar(id)'>Rebajar</button>
+          <button type='button' (click)='cmd_vender(id)'>Vendido</button>
+        </ion-card-content>
+      
+      </ion-card>
+
+    </ion-item>
+  </form>
+
+  <button color = "danger" ion-button large (click)="irPagSiguiente()">Entrar</button>
 
 </ion-content>

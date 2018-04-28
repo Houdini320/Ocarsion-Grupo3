@@ -29,7 +29,7 @@ export class InicioSesionPage {
   
    irPagSiguiente()
     {
-    this.navCtrl.push('PrincipalUsuarioPage');
+    this.navCtrl.push('PrincipalAdministradorPage');
     }
     
     irRegistrarse()

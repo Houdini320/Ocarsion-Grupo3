@@ -10,4 +10,5 @@ import { PrincipalAdministradorPage } from './principal-administrador';
     IonicPageModule.forChild(PrincipalAdministradorPage),
   ],
 })
+
 export class PrincipalAdministradorPageModule {}
