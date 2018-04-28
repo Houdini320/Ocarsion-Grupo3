@@ -29,15 +29,9 @@ export class InicioSesionPage {
       }); 
     }
   
-<<<<<<< HEAD
-   irPagSiguiente()
-    {
-    this.navCtrl.push('PrincipalAdministradorPage');
-=======
     public irPagSiguiente(){
  
       this.navCtrl.push('PrincipalUsuarioPage');
->>>>>>> 17da554da40fc1c6cb840f3c20acbc7cac372214
     }
     public irRegistrarse(){
       this.navCtrl.push('RegistrarsePage');
