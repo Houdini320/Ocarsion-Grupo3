@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { UsuarioCitaTallerPage } from './usuario-cita-taller';
+import { Calendar } from '@ionic-native/calendar';
 
 @NgModule({
   declarations: [
@@ -11,3 +12,4 @@ import { UsuarioCitaTallerPage } from './usuario-cita-taller';
   ],
 })
 export class UsuarioCitaTallerPageModule {}
+
