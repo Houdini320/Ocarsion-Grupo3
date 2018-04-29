@@ -9,24 +9,23 @@ import { FirebaseDbProvider } from '../providers/firebase-db/firebase-db';
 
 import { MyApp } from './app.component';
 import { InicioSesionPage } from '../pages/inicio-sesion/inicio-sesion';
-import { UsuarioCitaTallerPage } from '../pages/usuario-cita-taller/usuario-cita-taller';
 import { ChatUsuarioPage } from '../pages/chat-usuario/chat-usuario';
 import { ElegirConcesionarioPage } from '../pages/elegir-concesionario/elegir-concesionario';
 import { MensajesAdministradorPage } from '../pages/mensajes-administrador/mensajes-administrador';
 import { SubirCocheAdminPage } from '../pages/subir-coche-admin/subir-coche-admin';
 
 export const fireBaseConfig={
-  apiKey: "AIzaSyDuZH454-a8v05TUaRa5wG8N911-0DwuGE",
-   authDomain: "dsi-ionic.firebaseapp.com",
-   databaseURL: "https://dsi-ionic.firebaseio.com",
-   projectId: "dsi-ionic",
-   storageBucket: "dsi-ionic.appspot.com",
-  messagingSenderId: "652473996242"};
+  apiKey: "AIzaSyDzcwRF3oCpx_T1KNr2sMjH8ouwEf6WAIg",
+  authDomain: "dsi-ocarsion.firebaseapp.com",
+  databaseURL: "https://dsi-ocarsion.firebaseio.com",
+  projectId: "dsi-ocarsion",
+  storageBucket: "",
+  messagingSenderId: "594662433442"};
+
 
 @NgModule({
   declarations: [
     MyApp,
-    UsuarioCitaTallerPage,
     ChatUsuarioPage,
     ElegirConcesionarioPage,
     InicioSesionPage,
@@ -41,7 +40,6 @@ export const fireBaseConfig={
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    UsuarioCitaTallerPage,
     ChatUsuarioPage,
     ElegirConcesionarioPage,
     InicioSesionPage,
