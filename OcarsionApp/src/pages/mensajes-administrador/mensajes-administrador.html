@@ -15,37 +15,23 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label color="primary">Inline Label</ion-label>
-    <ion-input placeholder="PARA:........."></ion-input>
-  </ion-item>
+<ng-container *ngFor="let cliente of listaClientes ">
 
+  <ion-card *ngIf="cliente.estado == '' ">
 
-
-  <ion-item>
-    <ion-label color="primary" fixed>Fixed Label</ion-label>
-    <ion-input type="tel" placeholder="DE:.............."></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="number" placeholder="CONCEPTO: "></ion-input>
-  </ion-item>
-  <ion-card>
-
-      <ion-item>
-          <ion-label color="primary" stacked>Stacked Label</ion-label>
-          <ion-input type="password" placeholder="Password Input"></ion-input>
-        </ion-item>
-   
-   
-        <ion-card-header>    
-      TITULO
+    <ion-card-header>    
+      {{cliente.mensaje | uppercase}}
     </ion-card-header>
+    
     <ion-card-content>
-      Mensaje enviado al usuario con alguna descripcion.
+      El cliente {{cliente.nombre}} quiere pedir una cita el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} para {{cliente.mensaje}}
+      <button small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha], [cliente.hora])">Aceptar</button>
+      <button small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha], [cliente.hora])">Rechazar</button>
     </ion-card-content>
+
   </ion-card>
 
-  <button ion-button color="dark" (click) = "irPagSiguiente()">ENVIAR</button>
+</ng-container>
+  
 
 </ion-content>

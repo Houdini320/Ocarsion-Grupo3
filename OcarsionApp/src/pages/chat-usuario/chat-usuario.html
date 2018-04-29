@@ -23,17 +23,17 @@
 
 <ion-content padding>
 
-    <ion-card>
-        <ion-card-header> 
-          <ion-icon name="chatbubbles"></ion-icon>          
-          PemaCar
+    <ng-container *ngFor="let cliente of listaClientes ">
+      <ion-card *ngIf="cliente.estado != '' ">
+        <ion-card-header>    
+          {{cliente.mensaje | uppercase}}
         </ion-card-header>
         <ion-card-content>
-          Concepto: Recoger coche.
-          Hola buenas, su coche está listo para recoger.
+          La cita para el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} para {{cliente.mensaje}} ha sido {{cliente.estado | uppercase}}
+          <button small ion-button (click)="delCliente([cliente.id])">Eliminar</button>
         </ion-card-content>
-      </ion-card>
-
+      </ion-card>        
+    </ng-container>
 
       <button ion-button color="dark" (click) = "irHome()" >HOME</button>
       <button ion-button color="dark" (click) = "irPagSiguiente()">Next</button>

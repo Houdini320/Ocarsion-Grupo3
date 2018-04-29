@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
+import {FirebaseDbProvider} from '../../providers/firebase-db/firebase-db';
+import {Cliente} from '../../models/cliente.model';
 /**
  * Generated class for the ChatUsuarioPage page.
  *
@@ -15,7 +17,12 @@ import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
 })
 export class ChatUsuarioPage {
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  listaClientes:any;
+  
+  constructor(public navCtrl: NavController,public dbFirebase:FirebaseDbProvider) {
+
+  }
+
   irHome()
    {
    this.navCtrl.setRoot(InicioSesionPage);
@@ -24,5 +31,14 @@ export class ChatUsuarioPage {
    {
    this.navCtrl.push('MensajesAdministradorPage');
    }
+   
+   delCliente(id) { this.dbFirebase.delCliente(id); }
+
+  ionViewDidEnter()
+ {
+ this.dbFirebase.getClientes().subscribe(listaClientes=>{this.listaClientes=listaClientes;});
+ }
+  
+
 
 }

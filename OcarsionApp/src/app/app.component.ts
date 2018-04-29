@@ -4,10 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { InicioSesionPage } from '../pages/inicio-sesion/inicio-sesion';
-import { UsuarioCompraPage } from '../pages/usuario-compra/usuario-compra';
 import { ChatUsuarioPage } from '../pages/chat-usuario/chat-usuario';
 import { ElegirConcesionarioPage } from '../pages/elegir-concesionario/elegir-concesionario';
 import { MensajesAdministradorPage } from '../pages/mensajes-administrador/mensajes-administrador';
+import { UsuarioCitaTallerPage } from '../pages/usuario-cita-taller/usuario-cita-taller';
+import { SubirCocheAdminPage } from '../pages/subir-coche-admin/subir-coche-admin';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,14 +26,16 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Comprar coche', component: UsuarioCompraPage },
-      { title: 'Chat', component: ChatUsuarioPage },
+      { title: 'Notificaciones', component: ChatUsuarioPage },
+      { title: 'Pedir cita', component: UsuarioCitaTallerPage },
       { title: 'Cambiar concesionario', component: ElegirConcesionarioPage },
       { title: 'Cerrar sesión', component: InicioSesionPage }
     ];
 
     this.pages2 = [
-      { title: 'Notificaciones', component: MensajesAdministradorPage }
+      { title: 'Notificaciones', component: MensajesAdministradorPage },
+      { title: 'Subir coche', component: SubirCocheAdminPage },
+      { title: 'Cerrar sesión', component: InicioSesionPage }
     ];
 
   }

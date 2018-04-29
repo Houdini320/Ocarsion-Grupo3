@@ -15,7 +15,27 @@
 
 <ion-content padding>
 
+  <ion-input [(ngModel)]="nombre" type="text" placeholder="nombre"></ion-input>
 
+  <ion-item>
+    <ion-label>Concepto</ion-label>
+    <ion-select [(ngModel)]="mensaje">
+      <ion-option value="comprar coche">Comprar</ion-option>
+      <ion-option value="vender coche">Vender</ion-option>
+      <ion-option value="asistir al taller">Taller</ion-option>
+    </ion-select>
+  </ion-item>
 
-    <button ion-button color="dark" (click) = "irPagSiguiente()">CONFIRMAR FECHA SELECCIONADA</button>
+  <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+  
+    <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="myHour"></ion-datetime>
+    </ion-item>
+
+    <button ion-button (click)="addCliente2()">ENVIAR</button>
+
 </ion-content>
