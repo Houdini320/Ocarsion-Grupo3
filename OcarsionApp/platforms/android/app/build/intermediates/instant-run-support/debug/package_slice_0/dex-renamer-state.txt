@@ -1,0 +1,4 @@
+#Mon Apr 30 01:26:00 CEST 2018
+base.0=C\:\\GitHub\\Ocarsion-Grupo3\\OcarsionApp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\77
+renamed.0=classes.dex
+file.0=C\:\\GitHub\\Ocarsion-Grupo3\\OcarsionApp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\77\\classes.dex
