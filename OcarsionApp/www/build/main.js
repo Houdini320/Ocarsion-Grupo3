@@ -264,39 +264,39 @@ var map = {
 		9
 	],
 	"../pages/inicio-sesion/inicio-sesion.module": [
-		348,
+		340,
 		8
 	],
 	"../pages/mensajes-administrador/mensajes-administrador.module": [
-		340,
+		341,
 		7
 	],
 	"../pages/principal-administrador/principal-administrador.module": [
-		341,
+		342,
 		1
 	],
 	"../pages/principal-usuario/principal-usuario.module": [
-		342,
+		343,
 		0
 	],
 	"../pages/registrarse/registrarse.module": [
-		343,
+		344,
 		5
 	],
 	"../pages/solicitudes-admin/solicitudes-admin.module": [
-		344,
+		345,
 		4
 	],
 	"../pages/subir-coche-admin/subir-coche-admin.module": [
-		345,
+		346,
 		6
 	],
 	"../pages/usuario-cita-taller/usuario-cita-taller.module": [
-		346,
+		347,
 		3
 	],
 	"../pages/usuario-compra/usuario-compra.module": [
-		347,
+		348,
 		2
 	]
 };
@@ -414,6 +414,7 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/chat-usuario/chat-usuario.module#ChatUsuarioPageModule', name: 'ChatUsuarioPage', segment: 'chat-usuario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/elegir-concesionario/elegir-concesionario.module#ElegirConcesionarioPageModule', name: 'ElegirConcesionarioPage', segment: 'elegir-concesionario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inicio-sesion/inicio-sesion.module#InicioSesionPageModule', name: 'InicioSesionPage', segment: 'inicio-sesion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/mensajes-administrador/mensajes-administrador.module#MensajesAdministradorPageModule', name: 'MensajesAdministradorPage', segment: 'mensajes-administrador', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/principal-administrador/principal-administrador.module#PrincipalAdministradorPageModule', name: 'PrincipalAdministradorPage', segment: 'principal-administrador', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/principal-usuario/principal-usuario.module#PrincipalUsuarioPageModule', name: 'PrincipalUsuarioPage', segment: 'principal-usuario', priority: 'low', defaultHistory: [] },
@@ -421,8 +422,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/solicitudes-admin/solicitudes-admin.module#SolicitudesAdminPageModule', name: 'SolicitudesAdminPage', segment: 'solicitudes-admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/subir-coche-admin/subir-coche-admin.module#SubirCocheAdminPageModule', name: 'SubirCocheAdminPage', segment: 'subir-coche-admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/usuario-cita-taller/usuario-cita-taller.module#UsuarioCitaTallerPageModule', name: 'UsuarioCitaTallerPage', segment: 'usuario-cita-taller', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/usuario-compra/usuario-compra.module#UsuarioCompraPageModule', name: 'UsuarioCompraPage', segment: 'usuario-compra', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inicio-sesion/inicio-sesion.module#InicioSesionPageModule', name: 'InicioSesionPage', segment: 'inicio-sesion', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/usuario-compra/usuario-compra.module#UsuarioCompraPageModule', name: 'UsuarioCompraPage', segment: 'usuario-compra', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
