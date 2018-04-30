@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { MyApp } from '../../app/app.component';
 import { AlertController } from 'ionic-angular';
 
 /**
@@ -22,7 +21,7 @@ export class InicioSesionPage {
   myForm: FormGroup;
   myEmail: string;
 
-    constructor(public navCtrl: NavController,  public fb: FormBuilder, public alerCtrl: AlertController) {
+    constructor(public navCtrl: NavController,  public fb: FormBuilder, public alertCtrl: AlertController) {
     
       this.myForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
@@ -35,6 +34,8 @@ export class InicioSesionPage {
     }
     public doConfirm() {
      
+      this.doAlerta();
+
       if(this.myEmail == 'sheila@gmail.com'){
 
         this.navCtrl.push('PrincipalAdministradorPage');
@@ -44,6 +45,16 @@ export class InicioSesionPage {
         this.navCtrl.push('PrincipalUsuarioPage');
       }
     }
+
+    public doAlerta() {
+
+      let prompt = this.alertCtrl.create({
+         title: 'Ocarsion',
+         message: 'Se ha iniciado sesión correctamente. <br/><br/> ¡Bienvenido de nuevo!'
+       });
+
+       prompt.present();    
+     }
 
 }
    

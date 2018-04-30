@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
+import { IonicPage, NavController } from 'ionic-angular';
 import {FirebaseDbProvider} from '../../providers/firebase-db/firebase-db';
-import {Cliente} from '../../models/cliente.model';
 /**
  * Generated class for the ChatUsuarioPage page.
  *
@@ -24,7 +22,7 @@ export class ChatUsuarioPage {
   }
 
   
-   delCliente(id) { this.dbFirebase.delCliente(id); }
+  delCliente(id) { this.dbFirebase.delCliente(id); }
 
   ionViewDidEnter()
  {

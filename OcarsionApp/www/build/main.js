@@ -1,5 +1,74 @@
 webpackJsonp([11],{
 
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioSesionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the InicioSesionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InicioSesionPage = /** @class */ (function () {
+    function InicioSesionPage(navCtrl, fb, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.fb = fb;
+        this.alertCtrl = alertCtrl;
+        this.myForm = this.fb.group({
+            email: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].email]],
+            pass: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern(/^[a-z0-9]{6,18}$/)]],
+        });
+    }
+    InicioSesionPage.prototype.irRegistrarse = function () {
+        this.navCtrl.push('RegistrarsePage');
+    };
+    InicioSesionPage.prototype.doConfirm = function () {
+        this.doAlerta();
+        if (this.myEmail == 'sheila@gmail.com') {
+            this.navCtrl.push('PrincipalAdministradorPage');
+        }
+        else {
+            this.navCtrl.push('PrincipalUsuarioPage');
+        }
+    };
+    InicioSesionPage.prototype.doAlerta = function () {
+        var prompt = this.alertCtrl.create({
+            title: 'Ocarsion',
+            message: 'Se ha iniciado sesión correctamente. <br/><br/> ¡Bienvenido de nuevo!'
+        });
+        prompt.present();
+    };
+    InicioSesionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-inicio-sesion',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\inicio-sesion\inicio-sesion.html"*/'<!--\n\n  Generated template for the InicioSesionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header id="header">\n\n  <img id="logo" src="assets/imgs/Logo1.png">\n\n<ion-toolbar>\n\n<ion-title>Iniciar sesión</ion-title>\n\n</ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n<form [formGroup]="myForm" novalidate> \n\n  <ion-list>\n\n    <ion-item>\n\n    <ion-label id = "user" color="dark" stacked>Usuario</ion-label>\n\n      <ion-input id = "userEmail" [(ngModel)]="myEmail" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>\n\n    </ion-item>\n\n\n\n    <div id = "errorEmail" *ngIf="myForm.get(\'email\').errors && myForm.get(\'email\').dirty">\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'required\')">Campo obligatorio</p>\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'email\')">Formato de email incorrecto</p>\n\n    </div>\n\n\n\n    <ion-item>\n\n      <ion-label id = "pass" color="dark" stacked>Contraseña</ion-label>\n\n      <ion-input id = "pass" formControlName="pass" type="password" placeholder="introduce tu contraseña"></ion-input>\n\n    </ion-item>\n\n\n\n    <div id = "errorPass" *ngIf="myForm.get(\'pass\').errors && myForm.get(\'pass\').dirty">\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'required\')">Campo obligatorio</p>\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'pattern\')">Contraseña débil</p>\n\n    </div>\n\n\n\n  </ion-list>\n\n</form>\n\n\n\n<div id = "botonEntrar" >\n\n  <button id = "letraBoton" ion-button large (click)="doConfirm()" [disabled]="myForm.invalid">Entrar</button>\n\n</div>  \n\n<div id = "registro">\n\n  <p>¿Todavia no te has registrado?</p>\n\n  <a class="button" (click)="irRegistrarse()" >Regístrate aquí</a>\n\n</div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\inicio-sesion\inicio-sesion.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], InicioSesionPage);
+    return InicioSesionPage;
+}());
+
+//# sourceMappingURL=inicio-sesion.js.map
+
+/***/ }),
+
 /***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7,7 +76,7 @@ webpackJsonp([11],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatUsuarioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,10 +112,9 @@ var ChatUsuarioPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chat-usuario',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\chat-usuario\chat-usuario.html"*/'<!--\n\n  Generated template for the ChatUsuarioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-toolbar>\n\n        <ion-buttons left>\n\n            <button ion-button icon-only (click)="backButton()">\n\n                <ion-icon name="arrow-back"></ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n        <ion-title>Ocarsion</ion-title>\n\n    </ion-toolbar>\n\n\n\n    <ion-toolbar>         \n\n      <div id="subheader">\n\n          <p id="nombreConcesionario">PemaCar</p>\n\n      </div>               \n\n    </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <h2 id="titulo">Notificaciones</h2>\n\n\n\n    <ng-container *ngFor="let cliente of listaClientes ">\n\n      <ion-card id="carta" *ngIf="cliente.estado != \'\' ">\n\n        <ion-card-content>\n\n          La cita para el día {{cliente.fecha | date: \'dd/MM/yyyy\'}} a las {{cliente.hora}} ha sido {{cliente.estado | uppercase}}\n\n          <div id="eliminar">\n\n           <button id="botonEliminar" small ion-button (click)="delCliente([cliente.id])">Eliminar</button>\n\n          </div>\n\n          </ion-card-content>\n\n      </ion-card>        \n\n    </ng-container>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\chat-usuario\chat-usuario.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */]])
     ], ChatUsuarioPage);
     return ChatUsuarioPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=chat-usuario.js.map
@@ -105,7 +173,7 @@ var ElegirConcesionarioPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MensajesAdministradorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_cliente_model__ = __webpack_require__(225);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -171,10 +239,9 @@ var MensajesAdministradorPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-mensajes-administrador',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\mensajes-administrador\mensajes-administrador.html"*/'<!--\n\n  Generated template for the MensajesAdministradorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-toolbar>\n\n        <ion-buttons left>\n\n            <button ion-button icon-only (click)="backButton()">\n\n                <ion-icon name="arrow-back"></ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n        <ion-title>Ocarsion</ion-title>\n\n    </ion-toolbar>\n\n\n\n    <ion-toolbar>         \n\n        <div id="subheader">\n\n          <p id="nombreConcesionario">PemaCar</p>\n\n        </div>          \n\n    </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n<h3 id="titulo">Citas pendientes</h3>\n\n<ng-container *ngFor="let cliente of listaClientes ">\n\n\n\n  <ion-card id="carta" *ngIf="cliente.estado == \'\' ">\n\n\n\n    <ion-card-header>    \n\n      {{cliente.mensaje | uppercase}}\n\n    </ion-card-header>\n\n    \n\n    <ion-card-content>\n\n      El cliente {{cliente.nombre}} quiere pedir una cita el día {{cliente.fecha | date: \'dd/MM/yyyy\'}} a las {{cliente.hora}} para {{cliente.mensaje}}\n\n     <div id="botonesAdmin">\n\n      <button id="botonAceptar" small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha],[cliente.hora],[cliente.nombre])">Aceptar</button>\n\n      <button id="botonRechazar" small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha],[cliente.hora])">Rechazar</button>\n\n     </div>\n\n    </ion-card-content>\n\n\n\n  </ion-card>\n\n\n\n</ng-container>\n\n\n\n<h3 id="titulo2">Próximas citas</h3>\n\n<ng-container *ngFor="let cliente of listaClientes ">\n\n\n\n  <ion-card id="carta" *ngIf="cliente.estado == \'aceptada\' ">\n\n    \n\n    <ion-card-content>\n\n      El cliente {{cliente.nombre}} tiene una cita el día {{cliente.fecha | date: \'dd/MM/yyyy\'}} a las {{cliente.hora}}\n\n    </ion-card-content>\n\n\n\n  </ion-card>\n\n\n\n</ng-container>\n\n  \n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\mensajes-administrador\mensajes-administrador.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */]])
     ], MensajesAdministradorPage);
     return MensajesAdministradorPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=mensajes-administrador.js.map
@@ -272,19 +339,19 @@ var map = {
 		0
 	],
 	"../pages/registrarse/registrarse.module": [
-		347,
+		344,
 		5
 	],
 	"../pages/solicitudes-admin/solicitudes-admin.module": [
-		344,
+		345,
 		4
 	],
 	"../pages/subir-coche-admin/subir-coche-admin.module": [
-		345,
+		346,
 		6
 	],
 	"../pages/usuario-cita-taller/usuario-cita-taller.module": [
-		346,
+		347,
 		3
 	],
 	"../pages/usuario-compra/usuario-compra.module": [
@@ -349,11 +416,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_firebase_db_firebase_db__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_firebase_db_firebase_db__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_inicio_sesion_inicio_sesion__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_inicio_sesion_inicio_sesion__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_chat_usuario_chat_usuario__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_elegir_concesionario_elegir_concesionario__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_mensajes_administrador_mensajes_administrador__ = __webpack_require__(109);
@@ -410,10 +477,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/mensajes-administrador/mensajes-administrador.module#MensajesAdministradorPageModule', name: 'MensajesAdministradorPage', segment: 'mensajes-administrador', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/principal-administrador/principal-administrador.module#PrincipalAdministradorPageModule', name: 'PrincipalAdministradorPage', segment: 'principal-administrador', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/principal-usuario/principal-usuario.module#PrincipalUsuarioPageModule', name: 'PrincipalUsuarioPage', segment: 'principal-usuario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/registrarse/registrarse.module#RegistrarsePageModule', name: 'RegistrarsePage', segment: 'registrarse', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/solicitudes-admin/solicitudes-admin.module#SolicitudesAdminPageModule', name: 'SolicitudesAdminPage', segment: 'solicitudes-admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/subir-coche-admin/subir-coche-admin.module#SubirCocheAdminPageModule', name: 'SubirCocheAdminPage', segment: 'subir-coche-admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/usuario-cita-taller/usuario-cita-taller.module#UsuarioCitaTallerPageModule', name: 'UsuarioCitaTallerPage', segment: 'usuario-cita-taller', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/registrarse/registrarse.module#RegistrarsePageModule', name: 'RegistrarsePage', segment: 'registrarse', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/usuario-compra/usuario-compra.module#UsuarioCompraPageModule', name: 'UsuarioCompraPage', segment: 'usuario-compra', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -452,7 +519,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_inicio_sesion_inicio_sesion__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_inicio_sesion_inicio_sesion__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chat_usuario_chat_usuario__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_elegir_concesionario_elegir_concesionario__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_mensajes_administrador_mensajes_administrador__ = __webpack_require__(109);
@@ -524,68 +591,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 44:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioSesionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the InicioSesionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var InicioSesionPage = /** @class */ (function () {
-    function InicioSesionPage(navCtrl, fb, alerCtrl) {
-        this.navCtrl = navCtrl;
-        this.fb = fb;
-        this.alerCtrl = alerCtrl;
-        this.myForm = this.fb.group({
-            email: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].email]],
-            pass: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern(/^[a-z0-9]{6,18}$/)]],
-        });
-    }
-    InicioSesionPage.prototype.irRegistrarse = function () {
-        this.navCtrl.push('RegistrarsePage');
-    };
-    InicioSesionPage.prototype.doConfirm = function () {
-        if (this.myEmail == 'sheila@gmail.com') {
-            this.navCtrl.push('PrincipalAdministradorPage');
-        }
-        else {
-            this.navCtrl.push('PrincipalUsuarioPage');
-        }
-    };
-    InicioSesionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio-sesion',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\inicio-sesion\inicio-sesion.html"*/'<!--\n\n  Generated template for the InicioSesionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header id="header">\n\n  <img id="logo" src="assets/imgs/Logo1.png">\n\n<ion-toolbar>\n\n<ion-title>Iniciar sesión</ion-title>\n\n</ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n<form [formGroup]="myForm" novalidate> \n\n  <ion-list>\n\n    <ion-item>\n\n    <ion-label id = "user" color="dark" stacked>Usuario</ion-label>\n\n      <ion-input id = "userEmail" [(ngModel)]="myEmail" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>\n\n    </ion-item>\n\n\n\n    <div id = "errorEmail" *ngIf="myForm.get(\'email\').errors && myForm.get(\'email\').dirty">\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'required\')">Campo obligatorio</p>\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'email\')">Formato de email incorrecto</p>\n\n    </div>\n\n\n\n    <ion-item>\n\n      <ion-label id = "pass" color="dark" stacked>Contraseña</ion-label>\n\n      <ion-input id = "pass" formControlName="pass" type="password" placeholder="introduce tu contraseña"></ion-input>\n\n    </ion-item>\n\n\n\n    <div id = "errorPass" *ngIf="myForm.get(\'pass\').errors && myForm.get(\'pass\').dirty">\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'required\')">Campo obligatorio</p>\n\n      <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'pattern\')">Contraseña débil</p>\n\n    </div>\n\n\n\n  </ion-list>\n\n</form>\n\n\n\n<div id = "botonEntrar" >\n\n  <button id = "letraBoton" ion-button large (click)="doConfirm()" [disabled]="myForm.invalid">Entrar</button>\n\n</div>  \n\n<div id = "registro">\n\n  <p>¿Todavia no te has registrado?</p>\n\n  <a class="button" (click)="irRegistrarse()" >Regístrate aquí</a>\n\n</div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\inicio-sesion\inicio-sesion.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], InicioSesionPage);
-    return InicioSesionPage;
-}());
-
-//# sourceMappingURL=inicio-sesion.js.map
-
-/***/ }),
-
-/***/ 57:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

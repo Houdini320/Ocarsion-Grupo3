@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
+import { IonicPage, NavController } from 'ionic-angular';
 import {FirebaseDbProvider} from '../../providers/firebase-db/firebase-db';
 import {Cliente} from '../../models/cliente.model';
 import { AlertController } from 'ionic-angular';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 /**
  * Generated class for the UsuarioCitaTallerPage page.
  *
