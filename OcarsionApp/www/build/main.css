@@ -25707,6 +25707,10 @@ page-chat-usuario #carta {
   background-color: #f2f2f2;
 }
 
+page-chat-usuario #arrow {
+  color: black;
+}
+
 page-inicio-sesion #user {
   font-size: 90%;
 }
@@ -25784,6 +25788,10 @@ page-mensajes-administrador #carta {
   background-color: #f2f2f2;
 }
 
+page-mensajes-administrador #arrow {
+  color: black;
+}
+
 page-principal-administrador .classform1 .txtInline {
   text-align: right;
   width: 100px;
@@ -25821,6 +25829,10 @@ page-principal-administrador #contenedorVenta {
 page-principal-administrador #lupa {
   padding-right: 8px;
   color: #cc0000;
+}
+
+page-principal-administrador #menur {
+  color: black;
 }
 
 page-principal-usuario .classform1 .txtInline {
@@ -25865,6 +25877,10 @@ page-principal-usuario #contenedorCompra {
 page-principal-usuario #lupa {
   padding-right: 8px;
   color: #cc0000;
+}
+
+page-principal-usuario #menur {
+  color: black;
 }
 
 page-registrarse #header {
@@ -25975,4 +25991,8 @@ page-usuario-cita-taller #botonEntrar {
 page-usuario-cita-taller #entrar {
   padding-top: 15px;
   text-align: center;
+}
+
+page-usuario-cita-taller #arrow {
+  color: black;
 }
