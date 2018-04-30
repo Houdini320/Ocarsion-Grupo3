@@ -15,6 +15,7 @@
 
 <ion-content padding>
 
+<h3>Citas pendientes</h3>
 <ng-container *ngFor="let cliente of listaClientes ">
 
   <ion-card *ngIf="cliente.estado == '' ">
@@ -25,8 +26,21 @@
     
     <ion-card-content>
       El cliente {{cliente.nombre}} quiere pedir una cita el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} para {{cliente.mensaje}}
-      <button small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha], [cliente.hora])">Aceptar</button>
-      <button small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha], [cliente.hora])">Rechazar</button>
+      <button small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha],[cliente.hora],[cliente.nombre])">Aceptar</button>
+      <button small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha],[cliente.hora])">Rechazar</button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ng-container>
+
+<h3>Próximas citas</h3>
+<ng-container *ngFor="let cliente of listaClientes ">
+
+  <ion-card *ngIf="cliente.estado == 'aceptada' ">
+    
+    <ion-card-content>
+      El cliente {{cliente.nombre}} tiene una cita el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}}
     </ion-card-content>
 
   </ion-card>

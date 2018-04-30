@@ -45,13 +45,14 @@ export class MensajesAdministradorPage {
   }
   */
 
-  estadoCitaAceptada(id, fecha, hora)
+  estadoCitaAceptada(id, fecha, hora, nombre)
   {
     
 	  let datoscliente:Cliente=new Cliente();
     datoscliente.id=id;
     datoscliente.fecha=fecha;
     datoscliente.hora=hora;
+    datoscliente.nombre=nombre;
     datoscliente.estado="aceptada";
 	  
 	  this.dbFirebase.guardaCliente(datoscliente);

@@ -7,7 +7,6 @@ import { InicioSesionPage } from '../pages/inicio-sesion/inicio-sesion';
 import { ChatUsuarioPage } from '../pages/chat-usuario/chat-usuario';
 import { ElegirConcesionarioPage } from '../pages/elegir-concesionario/elegir-concesionario';
 import { MensajesAdministradorPage } from '../pages/mensajes-administrador/mensajes-administrador';
-import { UsuarioCitaTallerPage } from '../pages/usuario-cita-taller/usuario-cita-taller';
 import { SubirCocheAdminPage } from '../pages/subir-coche-admin/subir-coche-admin';
 
 @Component({
@@ -27,7 +26,6 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Notificaciones', component: ChatUsuarioPage },
-      { title: 'Pedir cita', component: UsuarioCitaTallerPage },
       { title: 'Cambiar concesionario', component: ElegirConcesionarioPage },
       { title: 'Cerrar sesión', component: InicioSesionPage }
     ];

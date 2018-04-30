@@ -25,11 +25,8 @@
 
     <ng-container *ngFor="let cliente of listaClientes ">
       <ion-card *ngIf="cliente.estado != '' ">
-        <ion-card-header>    
-          {{cliente.mensaje | uppercase}}
-        </ion-card-header>
         <ion-card-content>
-          La cita para el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} para {{cliente.mensaje}} ha sido {{cliente.estado | uppercase}}
+          La cita para el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} ha sido {{cliente.estado | uppercase}}
           <button small ion-button (click)="delCliente([cliente.id])">Eliminar</button>
         </ion-card-content>
       </ion-card>        
