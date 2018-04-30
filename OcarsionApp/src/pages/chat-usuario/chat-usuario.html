@@ -6,34 +6,37 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <h2 id="titulo">Notificaciones</h2>
-    </ion-navbar>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="backButton()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Ocarsion</ion-title>
+    </ion-toolbar>
 
-      <ion-navbar>
-         
-          <div id="subheader">
-            <p id="nombreConcesionario">PemaCar</p>
-          </div>   
-            
-        </ion-navbar>
+    <ion-toolbar>         
+      <div id="subheader">
+          <p id="nombreConcesionario">PemaCar</p>
+      </div>               
+    </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
+    <h2 id="titulo">Notificaciones</h2>
+
     <ng-container *ngFor="let cliente of listaClientes ">
-      <ion-card *ngIf="cliente.estado != '' ">
+      <ion-card id="carta" *ngIf="cliente.estado != '' ">
         <ion-card-content>
           La cita para el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} ha sido {{cliente.estado | uppercase}}
-          <button small ion-button (click)="delCliente([cliente.id])">Eliminar</button>
-        </ion-card-content>
+          <div id="eliminar">
+           <button id="botonEliminar" small ion-button (click)="delCliente([cliente.id])">Eliminar</button>
+          </div>
+          </ion-card-content>
       </ion-card>        
     </ng-container>
-
-      <button ion-button color="dark" (click) = "irHome()" >HOME</button>
-      <button ion-button color="dark" (click) = "irPagSiguiente()">Next</button>
-
 
 </ion-content>

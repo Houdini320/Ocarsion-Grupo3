@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InicioSesionPage } from '../inicio-sesion/inicio-sesion';
 import {FirebaseDbProvider} from '../../providers/firebase-db/firebase-db';
 import {Cliente} from '../../models/cliente.model';
+import { AlertController } from 'ionic-angular';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 /**
  * Generated class for the UsuarioCitaTallerPage page.
  *
@@ -23,20 +25,14 @@ export class UsuarioCitaTallerPage {
   myDate : Date;
   myHour : Date;
   
-  constructor(public navCtrl: NavController,public dbFirebase:FirebaseDbProvider) {
+  constructor(public navCtrl: NavController,public dbFirebase:FirebaseDbProvider, public alertCtrl: AlertController) {
 
   }
   
- irHome()
-  {
-  this.navCtrl.setRoot(InicioSesionPage);
-  }
- irPagSiguiente()
-  {
-  this.navCtrl.push('InicioSesionPage');
-  }
+  backButton() {
 
-  
+    this.navCtrl.push('PrincipalUsuarioPage');
+  }  
   
   addCliente2()
   {
@@ -50,10 +46,21 @@ export class UsuarioCitaTallerPage {
 
 	  
 		this.dbFirebase.guardaCliente(datoscliente).then(res=>{
-			alert(datoscliente.nombre+ " guardado en FB");
+			this.doAlerta();
 		});
 	  
   }
+
+  public doAlerta() {
+
+    let prompt = this.alertCtrl.create({
+       title: 'Ocarsion',
+       message: 'Muchas gracias por usar nuestra aplicación, la cita se ha enviado correctamente. <br/><br/> ¡Pronto recibirá la respuesta!'
+     });
+     this.navCtrl.push('PrincipalUsuarioPage');
+     prompt.present();    
+   }
+ 
 
   ionViewDidEnter()
  {

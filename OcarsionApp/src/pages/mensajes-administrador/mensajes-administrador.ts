@@ -23,14 +23,6 @@ export class MensajesAdministradorPage {
   constructor(public navCtrl: NavController,public dbFirebase:FirebaseDbProvider) {
 
   }
- irHome()
-  {
-  this.navCtrl.setRoot(InicioSesionPage);
-  }
- irPagSiguiente()
-  {
-  this.navCtrl.push('UsuarioCitaTallerPage');
-  }
 
   /*
   updateCliente(id)
@@ -73,6 +65,11 @@ export class MensajesAdministradorPage {
  {
  this.dbFirebase.getClientes().subscribe(listaClientes=>{this.listaClientes=listaClientes;});
  }
+
+  backButton() {
+
+    this.navCtrl.push('PrincipalAdministradorPage');
+  }
   
   
 

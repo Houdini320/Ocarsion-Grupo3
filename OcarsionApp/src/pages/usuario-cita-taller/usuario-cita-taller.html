@@ -6,19 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>usuarioCitaTaller</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+       <ion-buttons left>
+           <button ion-button icon-only (click)="backButton()">
+               <ion-icon name="arrow-back"></ion-icon>
+           </button>
+       </ion-buttons>
+       <ion-title>Ocarsion</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>         
+      <div id="subheader">
+        <p id="nombreConcesionario">PemaCar</p>
+      </div>          
+  </ion-toolbar>
 
 </ion-header>
 
-
 <ion-content padding>
 
-  <ion-input [(ngModel)]="nombre" type="text" placeholder="nombre"></ion-input>
+<h2 id="titulo">Configurar cita</h2>
 
   <ion-item>
-    <ion-label>Concepto</ion-label>
+    <ion-label color="dark">Nombre:</ion-label>
+    <ion-input id="nombre" [(ngModel)]="nombre" type="text" placeholder="Introduce tu nombre"></ion-input>
+  </ion-item>
+
+  <p id="pregunta1">¿Qué desea hacer?</p>
+
+  <ion-item>    
+    <ion-label>Concepto:</ion-label>
     <ion-select [(ngModel)]="mensaje">
       <ion-option value="comprar coche">Comprar</ion-option>
       <ion-option value="vender coche">Vender</ion-option>
@@ -26,16 +43,20 @@
     </ion-select>
   </ion-item>
 
+  <p id="pregunta1">Elige tu cita</p>
+
   <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-label>Fecha:</ion-label>
+      <ion-datetime id="fecha" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" placeholder="Introduce la fecha"></ion-datetime>
     </ion-item>
   
     <ion-item>
-        <ion-label>Date</ion-label>
-        <ion-datetime displayFormat="HH:mm" [(ngModel)]="myHour"></ion-datetime>
+        <ion-label>Hora:</ion-label>
+        <ion-datetime id="hora" displayFormat="HH:mm" [(ngModel)]="myHour" placeholder="Introduce la hora"></ion-datetime>
     </ion-item>
 
-    <button ion-button (click)="addCliente2()">ENVIAR</button>
+    <div id="entrar">
+      <button id="botonEntrar" ion-button (click)="addCliente2()">ENVIAR</button>
+    </div>
 
 </ion-content>

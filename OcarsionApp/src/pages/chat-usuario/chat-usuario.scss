@@ -1,8 +1,14 @@
 page-chat-usuario {
 
+    #titulo{
+
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
     #subheader{
 
-        background-color: red;
+        background-color: #cc0000;
         text-align: center;
         margin-top: 0px;        
     }
@@ -13,9 +19,19 @@ page-chat-usuario {
         color: white;
     }
 
-    #titulo{
+    #botonEliminar {
 
-        text-align: center;
+        background-color: #a6a6a6;
     }
 
+    #eliminar {
+
+        padding-top: 15px;
+        text-align: center;
+    }
+    
+    #carta {
+
+        background-color: #f2f2f2;
+    }
 }

@@ -23,15 +23,7 @@ export class ChatUsuarioPage {
 
   }
 
-  irHome()
-   {
-   this.navCtrl.setRoot(InicioSesionPage);
-   }
-  irPagSiguiente()
-   {
-   this.navCtrl.push('MensajesAdministradorPage');
-   }
-   
+  
    delCliente(id) { this.dbFirebase.delCliente(id); }
 
   ionViewDidEnter()
@@ -39,6 +31,9 @@ export class ChatUsuarioPage {
  this.dbFirebase.getClientes().subscribe(listaClientes=>{this.listaClientes=listaClientes;});
  }
   
+ backButton() {
 
+  this.navCtrl.push('PrincipalUsuarioPage');
+}
 
 }

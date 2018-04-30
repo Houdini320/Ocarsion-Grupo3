@@ -18,12 +18,14 @@ import { AlertController } from 'ionic-angular';
 export class RegistrarsePage {
 
   myForm: FormGroup;
+  myEmpleado: string;
 
   constructor(public navCtrl: NavController,  public fb: FormBuilder, public alertCtrl: AlertController) {
     
     this.myForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       pass: ['', [Validators.required, Validators.pattern(/^[a-z0-9]{6,18}$/)]],
+      empleado: ['']
     }); 
   }
 
@@ -38,23 +40,17 @@ export class RegistrarsePage {
   public doPrompt() {
     let prompt = this.alertCtrl.create({
       title: 'Confirmación de registro',
-      message: "Si usted es un administrador introduzca su CIP de empleado",
-      inputs: [
-        {
-          name: 'CIP',
-          placeholder: 'CIP'
-        },
-      ],
+      message: '¿Eres empleado?',
+
       buttons: [
         {
-          text: 'Registrarse como administrador',
+          text: 'Sí',
           handler: data => {
-            this.doAlert();
-            this.navCtrl.push('PrincipalAdministradorPage');
+            this.rellenarCip();            
           }
         },
         {
-          text: 'No soy administrador',
+          text: 'No',
           handler: data => {
             this.doAlert();
             this.navCtrl.push('PrincipalUsuarioPage');
@@ -63,6 +59,36 @@ export class RegistrarsePage {
       ]
     });
     prompt.present();
+  }
+
+  public rellenarCip() {
+
+   let prompt = this.alertCtrl.create({
+      title: 'Rellenar CIP',
+
+      inputs: [
+        {
+          name: 'CIP',
+          placeholder: 'CIP'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Aceptar',
+          handler: data => {
+            this.doAlert();
+            this.navCtrl.push('PrincipalAdministradorPage');           
+          }
+        },
+        {
+          text: 'Cancelar',
+          handler: data => {
+            this.navCtrl.push('RegistrarsePage');
+          }
+        }
+      ]
+    });
+    prompt.present();    
   }
 
   public doAlert() {

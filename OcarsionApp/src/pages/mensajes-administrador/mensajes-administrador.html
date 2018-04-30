@@ -6,19 +6,30 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>mensajesAdministrador</ion-title>
-  </ion-navbar>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="backButton()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Ocarsion</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>         
+        <div id="subheader">
+          <p id="nombreConcesionario">PemaCar</p>
+        </div>          
+    </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-<h3>Citas pendientes</h3>
+<h3 id="titulo">Citas pendientes</h3>
 <ng-container *ngFor="let cliente of listaClientes ">
 
-  <ion-card *ngIf="cliente.estado == '' ">
+  <ion-card id="carta" *ngIf="cliente.estado == '' ">
 
     <ion-card-header>    
       {{cliente.mensaje | uppercase}}
@@ -26,18 +37,20 @@
     
     <ion-card-content>
       El cliente {{cliente.nombre}} quiere pedir una cita el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}} para {{cliente.mensaje}}
-      <button small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha],[cliente.hora],[cliente.nombre])">Aceptar</button>
-      <button small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha],[cliente.hora])">Rechazar</button>
+     <div id="botonesAdmin">
+      <button id="botonAceptar" small ion-button (click)="estadoCitaAceptada([cliente.id],[cliente.fecha],[cliente.hora],[cliente.nombre])">Aceptar</button>
+      <button id="botonRechazar" small ion-button (click)="estadoCitaRechazada([cliente.id],[cliente.fecha],[cliente.hora])">Rechazar</button>
+     </div>
     </ion-card-content>
 
   </ion-card>
 
 </ng-container>
 
-<h3>Próximas citas</h3>
+<h3 id="titulo2">Próximas citas</h3>
 <ng-container *ngFor="let cliente of listaClientes ">
 
-  <ion-card *ngIf="cliente.estado == 'aceptada' ">
+  <ion-card id="carta" *ngIf="cliente.estado == 'aceptada' ">
     
     <ion-card-content>
       El cliente {{cliente.nombre}} tiene una cita el día {{cliente.fecha | date: 'dd/MM/yyyy'}} a las {{cliente.hora}}

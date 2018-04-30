@@ -20,6 +20,7 @@ import { AlertController } from 'ionic-angular';
 export class InicioSesionPage {
 
   myForm: FormGroup;
+  myEmail: string;
 
     constructor(public navCtrl: NavController,  public fb: FormBuilder, public alerCtrl: AlertController) {
     
@@ -29,35 +30,21 @@ export class InicioSesionPage {
       }); 
     }
   
-    public irPagSiguiente(){
- 
-      this.navCtrl.push('PrincipalUsuarioPage');
-    }
     public irRegistrarse(){
       this.navCtrl.push('RegistrarsePage');
     }
-
     public doConfirm() {
-      let confirm = this.alerCtrl.create({
-        title: 'Confirmación para inicio de sesión',
-        message: '¿Es usted administrador?',
-        buttons: [
-          {
-            text: 'Sí',
-            handler: () => {
-              this.navCtrl.push('PrincipalAdministradorPage');
-            }
-          },
-          {
-            text: 'No',
-            handler: () => {
-              this.navCtrl.push('PrincipalUsuarioPage');
-            }
-          }
-        ]
-      });
-      confirm.present()
+     
+      if(this.myEmail == 'sheila@gmail.com'){
+
+        this.navCtrl.push('PrincipalAdministradorPage');
+      }
+      else{
+
+        this.navCtrl.push('PrincipalUsuarioPage');
+      }
     }
+
 }
    
  

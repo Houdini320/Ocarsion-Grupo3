@@ -25678,8 +25678,13 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-chat-usuario #titulo {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 page-chat-usuario #subheader {
-  background-color: red;
+  background-color: #cc0000;
   text-align: center;
   margin-top: 0px;
 }
@@ -25689,8 +25694,17 @@ page-chat-usuario #nombreConcesionario {
   color: white;
 }
 
-page-chat-usuario #titulo {
+page-chat-usuario #botonEliminar {
+  background-color: #a6a6a6;
+}
+
+page-chat-usuario #eliminar {
+  padding-top: 15px;
   text-align: center;
+}
+
+page-chat-usuario #carta {
+  background-color: #f2f2f2;
 }
 
 page-inicio-sesion #user {
@@ -25714,6 +25728,7 @@ page-inicio-sesion #botonEntrar {
 
 page-inicio-sesion #letraBoton {
   font-size: 110%;
+  background-color: #cc0000;
 }
 
 page-inicio-sesion #registro {
@@ -25726,6 +25741,47 @@ page-inicio-sesion #errorEmail {
 
 page-inicio-sesion #errorPass {
   padding-left: 15px;
+}
+
+page-mensajes-administrador #botonAceptar {
+  background-color: #cc0000;
+}
+
+page-mensajes-administrador #botonRechazar {
+  background-color: #a6a6a6;
+}
+
+page-mensajes-administrador #botonesAdmin {
+  padding-top: 10px;
+  text-align: center;
+}
+
+page-mensajes-administrador #subheader {
+  background-color: #cc0000;
+  text-align: center;
+  margin-top: 0px;
+}
+
+page-mensajes-administrador #nombreConcesionario {
+  font-size: 20px;
+  color: white;
+}
+
+page-mensajes-administrador #titulo {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+page-mensajes-administrador #titulo2 {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+page-mensajes-administrador #carta {
+  background-color: #f2f2f2;
 }
 
 page-principal-administrador .classform1 .txtInline {
@@ -25744,7 +25800,7 @@ page-principal-administrador #titulo {
 }
 
 page-principal-administrador #subheader {
-  background-color: red;
+  background-color: #cc0000;
   text-align: center;
   margin-top: 0px;
 }
@@ -25755,7 +25811,7 @@ page-principal-administrador #nombreConcesionario {
 }
 
 page-principal-administrador #botonVenta {
-  background-color: red;
+  background-color: #cc0000;
 }
 
 page-principal-administrador #contenedorVenta {
@@ -25764,7 +25820,7 @@ page-principal-administrador #contenedorVenta {
 
 page-principal-administrador #lupa {
   padding-right: 8px;
-  color: red;
+  color: #cc0000;
 }
 
 page-principal-usuario .classform1 .txtInline {
@@ -25788,7 +25844,7 @@ page-principal-usuario #tituloPrincipal {
 }
 
 page-principal-usuario #subheader {
-  background-color: red;
+  background-color: #cc0000;
   text-align: center;
   margin-top: 0px;
 }
@@ -25799,7 +25855,7 @@ page-principal-usuario #nombreConcesionario {
 }
 
 page-principal-usuario #botonCompra {
-  background-color: red;
+  background-color: #cc0000;
 }
 
 page-principal-usuario #contenedorCompra {
@@ -25808,7 +25864,7 @@ page-principal-usuario #contenedorCompra {
 
 page-principal-usuario #lupa {
   padding-right: 8px;
-  color: red;
+  color: #cc0000;
 }
 
 page-registrarse #header {
@@ -25822,6 +25878,10 @@ page-registrarse #pass {
   font-size: 15px;
 }
 
+page-registrarse #empleado {
+  font-size: 15px;
+}
+
 page-registrarse #botonEntrar {
   padding-left: 15px;
   padding-top: 15px;
@@ -25829,6 +25889,7 @@ page-registrarse #botonEntrar {
 
 page-registrarse #letraBoton {
   font-size: 15px;
+  background-color: #cc0000;
 }
 
 page-registrarse #user {
@@ -25843,10 +25904,6 @@ page-registrarse #botonRegistrar {
   text-align: center;
 }
 
-page-registrarse #empleado {
-  font-size: 15px;
-}
-
 page-registrarse #aclaracion {
   font-size: 10px;
 }
@@ -25857,4 +25914,65 @@ page-registrarse #errorEmail {
 
 page-registrarse #errorPass {
   padding-left: 15px;
+}
+
+page-usuario-cita-taller .mi-input::-webkit-input-placeholder {
+  color: #cc0000;
+}
+
+page-usuario-cita-taller .mi-input:-ms-input-placeholder {
+  color: #cc0000;
+}
+
+page-usuario-cita-taller .mi-input::-ms-input-placeholder {
+  color: #cc0000;
+}
+
+page-usuario-cita-taller .mi-input::placeholder {
+  color: #cc0000;
+}
+
+page-usuario-cita-taller #nombre {
+  font-size: 15px;
+}
+
+page-usuario-cita-taller #fecha {
+  font-size: 15px;
+}
+
+page-usuario-cita-taller #hora {
+  font-size: 15px;
+}
+
+page-usuario-cita-taller #subheader {
+  background-color: #cc0000;
+  text-align: center;
+  margin-top: 0px;
+}
+
+page-usuario-cita-taller #nombreConcesionario {
+  font-size: 20px;
+  color: white;
+}
+
+page-usuario-cita-taller #titulo {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+page-usuario-cita-taller #pregunta1 {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #cc0000;
+}
+
+page-usuario-cita-taller #botonEntrar {
+  background-color: #cc0000;
+}
+
+page-usuario-cita-taller #entrar {
+  padding-top: 15px;
+  text-align: center;
 }

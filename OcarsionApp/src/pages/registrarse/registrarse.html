@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header id="header">
-    <img id="logo" src="../../assets/imgs/Logo1.png">
+    <img id="logo" src="assets/imgs/Logo1.png">
 <ion-toolbar>
   <ion-title>Registrarse</ion-title>
 </ion-toolbar>
@@ -43,11 +43,12 @@
         </ion-item>
 
       </ion-list>
-
   </form>    
 
       <div id = "botonRegistrar" >
-          <button id = "letraBoton" color = "danger" [disabled]="myForm.invalid" ion-button large (click)="doPrompt()">Registrar</button>
+          <button id = "letraBoton" [disabled]="myForm.invalid" ion-button large (click)="doPrompt()">Registrar</button>
       </div>  
+
+      <p id="aclaracion">(*) Este campo es solo para empresas.</p>
 
 </ion-content>
