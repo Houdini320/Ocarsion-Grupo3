@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 30 17:25:08 CEST 2018
+#Mon Apr 30 20:16:30 CEST 2018
 122.file=C\:\\GitHub\\Ocarsion-Grupo3\\OcarsionApp\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\ic_launcher_round.png
 60.set=ASSET
 129.file=C\:\\GitHub\\Ocarsion-Grupo3\\OcarsionApp\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-device\\www\\device.js

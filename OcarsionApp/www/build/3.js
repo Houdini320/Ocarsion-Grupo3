@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 347:
+/***/ 342:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioCitaTallerPageModule", function() { return UsuarioCitaTallerPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrarsePageModule", function() { return RegistrarsePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__usuario_cita_taller__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrarse__ = __webpack_require__(347);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var UsuarioCitaTallerPageModule = /** @class */ (function () {
-    function UsuarioCitaTallerPageModule() {
+var RegistrarsePageModule = /** @class */ (function () {
+    function RegistrarsePageModule() {
     }
-    UsuarioCitaTallerPageModule = __decorate([
+    RegistrarsePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__usuario_cita_taller__["a" /* UsuarioCitaTallerPage */],
+                __WEBPACK_IMPORTED_MODULE_2__registrarse__["a" /* RegistrarsePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__usuario_cita_taller__["a" /* UsuarioCitaTallerPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__registrarse__["a" /* RegistrarsePage */]),
             ],
         })
-    ], UsuarioCitaTallerPageModule);
-    return UsuarioCitaTallerPageModule;
+    ], RegistrarsePageModule);
+    return RegistrarsePageModule;
 }());
 
-//# sourceMappingURL=usuario-cita-taller.module.js.map
+//# sourceMappingURL=registrarse.module.js.map
 
 /***/ }),
 
-/***/ 355:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsuarioCitaTallerPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrarsePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_cliente_model__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,56 +59,98 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the UsuarioCitaTallerPage page.
+ * Generated class for the RegistrarsePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var UsuarioCitaTallerPage = /** @class */ (function () {
-    function UsuarioCitaTallerPage(navCtrl, dbFirebase, alertCtrl) {
+var RegistrarsePage = /** @class */ (function () {
+    function RegistrarsePage(navCtrl, fb, alertCtrl) {
         this.navCtrl = navCtrl;
-        this.dbFirebase = dbFirebase;
+        this.fb = fb;
         this.alertCtrl = alertCtrl;
+        this.myForm = this.fb.group({
+            email: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].email]],
+            pass: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern(/^[a-z0-9]{6,18}$/)]],
+            empleado: ['']
+        });
     }
-    UsuarioCitaTallerPage.prototype.backButton = function () {
+    RegistrarsePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RegistrarsePage');
+    };
+    RegistrarsePage.prototype.irPagSiguiente = function () {
         this.navCtrl.push('PrincipalUsuarioPage');
     };
-    UsuarioCitaTallerPage.prototype.addCliente2 = function () {
+    RegistrarsePage.prototype.doPrompt = function () {
         var _this = this;
-        var datoscliente = new __WEBPACK_IMPORTED_MODULE_3__models_cliente_model__["a" /* Cliente */]();
-        datoscliente.mensaje = this.mensaje;
-        datoscliente.nombre = this.nombre;
-        datoscliente.fecha = this.myDate;
-        datoscliente.hora = this.myHour;
-        datoscliente.estado = "";
-        this.dbFirebase.guardaCliente(datoscliente).then(function (res) {
-            _this.doAlerta();
-        });
-    };
-    UsuarioCitaTallerPage.prototype.doAlerta = function () {
         var prompt = this.alertCtrl.create({
-            title: 'Ocarsion',
-            message: 'Muchas gracias por usar nuestra aplicación, la cita se ha enviado correctamente. <br/><br/> ¡Pronto recibirá la respuesta!'
+            title: 'Confirmación de registro',
+            message: '¿Eres empleado?',
+            buttons: [
+                {
+                    text: 'Sí',
+                    handler: function (data) {
+                        _this.rellenarCip();
+                    }
+                },
+                {
+                    text: 'No',
+                    handler: function (data) {
+                        _this.doAlert();
+                        _this.navCtrl.push('PrincipalUsuarioPage');
+                    }
+                }
+            ]
         });
-        this.navCtrl.push('PrincipalUsuarioPage');
         prompt.present();
     };
-    UsuarioCitaTallerPage.prototype.ionViewDidEnter = function () {
+    RegistrarsePage.prototype.rellenarCip = function () {
         var _this = this;
-        this.dbFirebase.getClientes().subscribe(function (listaClientes) { _this.listaClientes = listaClientes; });
+        var prompt = this.alertCtrl.create({
+            title: 'Rellenar CIP',
+            inputs: [
+                {
+                    name: 'CIP',
+                    placeholder: 'CIP'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Aceptar',
+                    handler: function (data) {
+                        _this.doAlert();
+                        _this.navCtrl.push('PrincipalAdministradorPage');
+                    }
+                },
+                {
+                    text: 'Cancelar',
+                    handler: function (data) {
+                        _this.navCtrl.push('RegistrarsePage');
+                    }
+                }
+            ]
+        });
+        prompt.present();
     };
-    UsuarioCitaTallerPage = __decorate([
+    RegistrarsePage.prototype.doAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: '¡Registro completado!',
+            message: '¡Gracias por unirte a esta gran familia del mundo del automóvil!',
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    RegistrarsePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-usuario-cita-taller',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\usuario-cita-taller\usuario-cita-taller.html"*/'<!--\n\n  Generated template for the UsuarioCitaTallerPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-toolbar>\n\n       <ion-buttons left>\n\n           <button ion-button icon-only (click)="backButton()">\n\n               <ion-icon id="arrow" name="arrow-back"></ion-icon>\n\n           </button>\n\n       </ion-buttons>\n\n       <ion-title>Ocarsion</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar>         \n\n      <div id="subheader">\n\n        <p id="nombreConcesionario">PemaCar</p>\n\n      </div>          \n\n  </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n<h2 id="titulo">Configurar cita</h2>\n\n\n\n  <ion-item>\n\n    <ion-label color="dark">Nombre:</ion-label>\n\n    <ion-input id="nombre" [(ngModel)]="nombre" type="text" placeholder="Introduce tu nombre"></ion-input>\n\n  </ion-item>\n\n\n\n  <p id="pregunta1">¿Qué desea hacer?</p>\n\n\n\n  <ion-item>    \n\n    <ion-label>Concepto:</ion-label>\n\n    <ion-select [(ngModel)]="mensaje">\n\n      <ion-option value="comprar coche">Comprar</ion-option>\n\n      <ion-option value="vender coche">Vender</ion-option>\n\n      <ion-option value="asistir al taller">Taller</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n\n\n  <p id="pregunta1">Elige tu cita</p>\n\n\n\n  <ion-item>\n\n      <ion-label>Fecha:</ion-label>\n\n      <ion-datetime id="fecha" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" placeholder="Introduce la fecha"></ion-datetime>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n        <ion-label>Hora:</ion-label>\n\n        <ion-datetime id="hora" displayFormat="HH:mm" [(ngModel)]="myHour" placeholder="Introduce la hora"></ion-datetime>\n\n    </ion-item>\n\n\n\n    <div id="entrar">\n\n      <button id="botonEntrar" ion-button (click)="addCliente2()">ENVIAR</button>\n\n    </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\usuario-cita-taller\usuario-cita-taller.html"*/,
+            selector: 'page-registrarse',template:/*ion-inline-start:"C:\GitHub\Ocarsion-Grupo3\OcarsionApp\src\pages\registrarse\registrarse.html"*/'<!--\n\n  Generated template for the RegistrarsePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header id="header">\n\n    <img id="logo" src="assets/imgs/Logo1.png">\n\n<ion-toolbar>\n\n  <ion-title>Registrarse</ion-title>\n\n</ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="myForm" novalidate> \n\n    <ion-list>\n\n\n\n      <ion-item>\n\n        <ion-label id = "user" color="dark" stacked>Usuario</ion-label>\n\n          <ion-input id = "user" formControlName="email" type="email" placeholder="introduce tu email"></ion-input>\n\n        </ion-item>\n\n\n\n        <div id = "errorEmail" *ngIf="myForm.get(\'email\').errors && myForm.get(\'email\').dirty">\n\n          <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'required\')">Campo obligatorio</p>\n\n          <p color="danger" ion-text *ngIf="myForm.get(\'email\').hasError(\'email\')">Formato de email incorrecto</p>\n\n        </div>\n\n      \n\n        <ion-item>\n\n          <ion-label id = "pass" color="dark" stacked>Contraseña</ion-label>\n\n          <ion-input id = "pass" formControlName="pass" type="password" placeholder="introduce tu contraseña"></ion-input>\n\n        </ion-item>\n\n\n\n        <div id = "errorPass" *ngIf="myForm.get(\'pass\').errors && myForm.get(\'pass\').dirty">\n\n          <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'required\')">Campo obligatorio</p>\n\n          <p color="danger" ion-text *ngIf="myForm.get(\'pass\').hasError(\'pattern\')">Contraseña débil</p>\n\n        </div>\n\n\n\n        <ion-item>\n\n          <ion-label id="check">He leído y acepto los <a>términos y condiciones</a></ion-label>\n\n          <ion-checkbox></ion-checkbox>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n  </form>    \n\n\n\n      <div id = "botonRegistrar" >\n\n          <button id = "letraBoton" [disabled]="myForm.invalid" ion-button large (click)="doPrompt()">Registrar</button>\n\n      </div>  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\GitHub\Ocarsion-Grupo3\OcarsionApp\src\pages\registrarse\registrarse.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_db_firebase_db__["a" /* FirebaseDbProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], UsuarioCitaTallerPage);
-    return UsuarioCitaTallerPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], RegistrarsePage);
+    return RegistrarsePage;
 }());
 
-//# sourceMappingURL=usuario-cita-taller.js.map
+//# sourceMappingURL=registrarse.js.map
 
 /***/ })
 

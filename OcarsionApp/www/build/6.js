@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 346:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubirCocheAdminPageModule", function() { return SubirCocheAdminPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InicioSesionPageModule", function() { return InicioSesionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subir_coche_admin__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_sesion__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SubirCocheAdminPageModule = /** @class */ (function () {
-    function SubirCocheAdminPageModule() {
+var InicioSesionPageModule = /** @class */ (function () {
+    function InicioSesionPageModule() {
     }
-    SubirCocheAdminPageModule = __decorate([
+    InicioSesionPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__subir_coche_admin__["a" /* SubirCocheAdminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__inicio_sesion__["a" /* InicioSesionPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__subir_coche_admin__["a" /* SubirCocheAdminPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inicio_sesion__["a" /* InicioSesionPage */]),
             ],
         })
-    ], SubirCocheAdminPageModule);
-    return SubirCocheAdminPageModule;
+    ], InicioSesionPageModule);
+    return InicioSesionPageModule;
 }());
 
-//# sourceMappingURL=subir-coche-admin.module.js.map
+//# sourceMappingURL=inicio-sesion.module.js.map
 
 /***/ })
 

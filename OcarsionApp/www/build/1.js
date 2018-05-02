@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 342:
+/***/ 346:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrincipalAdministradorPageModule", function() { return PrincipalAdministradorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__principal_administrador__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__principal_administrador__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,14 +38,14 @@ var PrincipalAdministradorPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 349:
+/***/ 351:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrincipalAdministradorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__coche__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__coche__ = __webpack_require__(352);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -102,7 +102,7 @@ var PrincipalAdministradorPage = /** @class */ (function () {
     };
     PrincipalAdministradorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-principal-administrador',template:/*ion-inline-start:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\principal-administrador\principal-administrador.html"*/'<!--\n\n  Generated template for the PrincipalAdministradorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-toolbar>    \n\n        <ion-title>Ocarsion</ion-title>\n\n        <button ion-button menuToggle>\n\n            <ion-icon id="menur" name="menu"></ion-icon>\n\n          </button>\n\n      </ion-toolbar>\n\n\n\n  <ion-toolbar>\n\n         \n\n      <div id="subheader">\n\n        <p id="nombreConcesionario">PemaCar</p>\n\n      </div>   \n\n        \n\n  </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <h2 id="titulo">Vehículos a la Venta</h2>\n\n  \n\n  <form class=\'classform1\' #f=\'ngForm\' >\n\n  \n\n  <br/>\n\n  <br/>   \n\n  <div class=\'txtInline\'><ion-icon id="lupa" name="search"></ion-icon>Filtrar por:    \n\n  </div>\n\n  <input type=\'search\' placeholder="(marca de coche)" name=\'filtro2\' [(ngModel)]=\'filtro\'/>\n\n  <br/><br/>\n\n  \n\n    <ion-item *ngFor=\'let id of getFiltrados(); let i=index\'>\n\n\n\n      <ion-card>\n\n\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="assets/imgs/{{coches[id].foto}}" *ngIf=\'[coches[id].foto]!=""\'>\n\n          </ion-avatar>\n\n          <h2>{{coches[id].marca | uppercase}}</h2>\n\n          <p>{{coches[id].modelo}}</p>\n\n        </ion-item>\n\n      \n\n        <img src="assets/imgs/{{coches[id].foto}}" *ngIf=\'[coches[id].foto]!=""\'>\n\n      \n\n        <ion-card-content>\n\n          <h1 align="right">{{coches[id].getPVP() | number:\'1.0-0\'}}€</h1>\n\n          <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:\'yyyy\'}}</p>\n\n          <div id="contenedorVenta">\n\n              <button ion-button id="botonVenta" type=\'button\' (click)=\'cmd_vender(id)\'>Vendido</button>\n\n          </div>          \n\n        </ion-card-content>\n\n      \n\n      </ion-card>\n\n\n\n    </ion-item>\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\spshe\Documents\GitHub\Ocarsion-Grupo3\OcarsionApp\OcarsionApp\src\pages\principal-administrador\principal-administrador.html"*/,
+            selector: 'page-principal-administrador',template:/*ion-inline-start:"C:\GitHub\Ocarsion-Grupo3\OcarsionApp\src\pages\principal-administrador\principal-administrador.html"*/'<!--\n\n  Generated template for the PrincipalAdministradorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-toolbar>    \n\n        <ion-title>Ocarsion</ion-title>\n\n        <button ion-button menuToggle>\n\n            <ion-icon id="menur" name="menu"></ion-icon>\n\n          </button>\n\n      </ion-toolbar>\n\n\n\n  <ion-toolbar>\n\n         \n\n      <div id="subheader">\n\n        <p id="nombreConcesionario">PemaCar</p>\n\n      </div>   \n\n        \n\n  </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <h2 id="titulo">Vehículos a la Venta</h2>\n\n  \n\n  <form class=\'classform1\' #f=\'ngForm\' >\n\n  \n\n  <br/>\n\n  <br/>   \n\n  <div class=\'txtInline\'><ion-icon id="lupa" name="search"></ion-icon>Filtrar por:    \n\n  </div>\n\n  <input type=\'search\' placeholder="(marca de coche)" name=\'filtro2\' [(ngModel)]=\'filtro\'/>\n\n  <br/><br/>\n\n  \n\n    <ion-item *ngFor=\'let id of getFiltrados(); let i=index\'>\n\n\n\n      <ion-card>\n\n\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="assets/imgs/{{coches[id].foto}}" *ngIf=\'[coches[id].foto]!=""\'>\n\n          </ion-avatar>\n\n          <h2>{{coches[id].marca | uppercase}}</h2>\n\n          <p>{{coches[id].modelo}}</p>\n\n        </ion-item>\n\n      \n\n        <img src="assets/imgs/{{coches[id].foto}}" *ngIf=\'[coches[id].foto]!=""\'>\n\n      \n\n        <ion-card-content>\n\n          <h1 align="right">{{coches[id].getPVP() | number:\'1.0-0\'}}€</h1>\n\n          <p align="right">Fecha del modelo: {{coches[id].fecha_modelo | date:\'yyyy\'}}</p>\n\n          <div id="contenedorVenta">\n\n              <button ion-button id="botonVenta" type=\'button\' (click)=\'cmd_vender(id)\'>Vendido</button>\n\n          </div>          \n\n        </ion-card-content>\n\n      \n\n      </ion-card>\n\n\n\n    </ion-item>\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\GitHub\Ocarsion-Grupo3\OcarsionApp\src\pages\principal-administrador\principal-administrador.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], PrincipalAdministradorPage);
@@ -113,7 +113,7 @@ var PrincipalAdministradorPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 350:
+/***/ 352:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
